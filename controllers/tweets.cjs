@@ -10,6 +10,14 @@ const createTweet = async (req, res) => {
         res.status(400).json("creation falied!")
     }
 }
+const createUser = async (req, res) => {
+    let response = await Tweet.create(req.body);
+    if (response) {
+        res.json(response)
+    } else {
+        res.status(400).json("creation falied!")
+    }
+}
 
 const getTweets = async (req, res) => {
     // make a request to databse, get a response (an array of objects)
@@ -40,5 +48,5 @@ module.exports = {
     createTweet,
     getTweets,
     updateTweet,
-    deleteTweet
+    deleteTweet,
 }

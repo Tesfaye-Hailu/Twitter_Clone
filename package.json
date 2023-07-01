@@ -17,6 +17,7 @@
     "express": "^4.18.2",
     "mongoose": "^7.3.0",
     "path": "^0.12.7",
+    "proxy": "^2.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.13.0"

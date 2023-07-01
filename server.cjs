@@ -1,3 +1,5 @@
+
+
 /* eslint-disable no-undef */
 const express = require('express');
 const dotenv = require('dotenv');
@@ -6,6 +8,7 @@ require('./config/database.cjs')
 
 const { createTweet, getTweets, updateTweet, deleteTweet } = require('./controllers/tweets.cjs')
 
+const User = require('./models/User.cjs');
 const app = express();
 app.use(express.json());
 
@@ -22,6 +25,12 @@ app.put('/tweets/:tweetId/:newTitle', updateTweet)
 
 // D
 app.delete('/tweets/:tweetId', deleteTweet)
+
+app.post('/signup', async (req,res) =>{
+    const userDetail = await User.create(req.body)
+    res.send(userDetail)
+
+})
 
 
 app.listen(4002, () => {

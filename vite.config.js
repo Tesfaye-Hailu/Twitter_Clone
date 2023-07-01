@@ -6,7 +6,9 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/tweets": "http://localhost:4002"
+      "/tweets": "http://localhost:4002",
+      "/signup": "http://localhost:4002"
+      
       
     }
   }
